@@ -9,7 +9,6 @@ if platform.is_win then
     options.default_prog = { "powershell" }
     options.launch_menu = {
         { label = " PowerShell v1", args = { "powershell" } },
-        { label = " PowerShell v7", args = { "pwsh" } },
         { label = " Cmd", args = { "cmd" } },
     }
 elseif platform.is_mac then

@@ -1,8 +1,16 @@
 local Config = require("config")
 
+local platform = require('utils.platform')
+local wallpaper_dir = ""
+if platform.is_win then
+    wallpaper_dir = require('wezterm').home_dir .. '/Pictures/wallpaper/'
+else
+    wallpaper_dir = require('wezterm').config_dir .. '/backdrops/'
+end
+
 require('utils.backdrops')
 -- :set_focus('#000000')
--- :set_images_dir(require('wezterm').home_dir .. '/Pictures/Wallpapers/')
+    :set_images_dir(wallpaper_dir)
     :set_images()
     :random()
 
