@@ -12,10 +12,11 @@ if platform.is_win then
         { label = " Cmd", args = { "cmd" } },
     }
 elseif platform.is_mac then
-    options.default_prog = { "zsh", "--login" }
+    options.default_prog = { "/usr/local/bin/fish", "-l" }
     options.launch_menu = {
         { label = " Bash", args = { "bash", "--login" } },
         { label = " Zsh", args = { "zsh", "--login" } },
+        { label = " Fish", args = {"/usr/local/bin/fish", "-l"} }
     }
 elseif platform.is_linux then
     options.default_prog = { "bash", "--login" }

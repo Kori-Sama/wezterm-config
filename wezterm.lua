@@ -4,6 +4,8 @@ local platform = require('utils.platform')
 local wallpaper_dir = ""
 if platform.is_win then
     wallpaper_dir = require('wezterm').home_dir .. '/Pictures/wallpaper/'
+elseif platform.is_mac then
+    wallpaper_dir = require('wezterm').home_dir .. '/Pictures/Wallpapers/'
 else
     wallpaper_dir = require('wezterm').config_dir .. '/backdrops/'
 end
@@ -16,7 +18,7 @@ require('utils.backdrops')
 
 require('events.left-status').setup()
 require('events.right-status').setup({ date_format = '%a %H:%M:%S' })
-require('events.tab-title').setup({ hide_active_tab_unseen = false, unseen_icon = 'circle' })
+require('events.tab-title').setup({ hide_active_tab_unseen = false, unseen_icon = 'numbered_box' })
 require('events.new-tab-button').setup()
 
 return Config:init()
