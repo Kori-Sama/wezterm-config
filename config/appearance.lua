@@ -3,6 +3,9 @@ local backdrops = require('utils.backdrops')
 local colors = require('colors.custom')
 
 return {
+    initial_cols = 127,
+    initial_rows = 37,
+
     max_fps = 120,
     front_end = 'WebGpu',
     webgpu_power_preference = 'HighPerformance',
@@ -29,7 +32,7 @@ return {
 
     -- tab bar
     enable_tab_bar = true,
-    hide_tab_bar_if_only_one_tab = false,
+    hide_tab_bar_if_only_one_tab = true,
     use_fancy_tab_bar = false,
     tab_max_width = 25,
     show_tab_index_in_tab_bar = false,
@@ -42,18 +45,15 @@ return {
         top = 10,
         bottom = 7.5,
     },
+    macos_window_background_blur = 70,
     adjust_window_size_when_changing_font_size = false,
     window_close_confirmation = 'NeverPrompt',
-    window_decorations = 'RESIZE',
+    window_decorations = 'RESIZE | MACOS_FORCE_ENABLE_SHADOW',
     window_frame = {
         active_titlebar_bg = '#090909',
         -- font = fonts.font,
         -- font_size = fonts.font_size,
     },
-    -- inactive_pane_hsb = {
-    --    saturation = 0.9,
-    --    brightness = 0.65,
-    -- },
     inactive_pane_hsb = {
         saturation = 1,
         brightness = 1,
